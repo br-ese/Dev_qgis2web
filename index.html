@@ -41,11 +41,11 @@
         <script src="js/tailDT.js"></script>
 <script src="js/nouislider.min.js"></script>
 <script src="js/wNumb.js"></script>
-        <script src="data/MN_Turnkey_GIS_Sep26_3.js"></script>
+        <script src="data/MN_Turnkey_GIS_webMap_2.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[44.21248260898489,-96.47424024513292],[45.165276473490565,-94.42502141610524]]);
+        }).fitBounds([[44.161844033130414,-96.47054427633762],[45.11456328080623,-94.42287355110703]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -140,22 +140,10 @@
         });
         layer_ESRIStandard_0;
         map.addLayer(layer_ESRIStandard_0);
-        map.createPane('pane_GoogleSatelliteHybrid_1');
-        map.getPane('pane_GoogleSatelliteHybrid_1').style.zIndex = 401;
-        var layer_GoogleSatelliteHybrid_1 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
-            pane: 'pane_GoogleSatelliteHybrid_1',
-            opacity: 1.0,
-            attribution: '',
-            minZoom: 1,
-            maxZoom: 28,
-            minNativeZoom: 0,
-            maxNativeZoom: 19
-        });
-        layer_GoogleSatelliteHybrid_1;
-        map.createPane('pane_ESRIBoundariesPlaces_2');
-        map.getPane('pane_ESRIBoundariesPlaces_2').style.zIndex = 402;
-        var layer_ESRIBoundariesPlaces_2 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
-            pane: 'pane_ESRIBoundariesPlaces_2',
+        map.createPane('pane_ESRIBoundariesPlaces_1');
+        map.getPane('pane_ESRIBoundariesPlaces_1').style.zIndex = 401;
+        var layer_ESRIBoundariesPlaces_1 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+            pane: 'pane_ESRIBoundariesPlaces_1',
             opacity: 1.0,
             attribution: '',
             minZoom: 1,
@@ -163,9 +151,9 @@
             minNativeZoom: 0,
             maxNativeZoom: 20
         });
-        layer_ESRIBoundariesPlaces_2;
-        map.addLayer(layer_ESRIBoundariesPlaces_2);
-        function pop_MN_Turnkey_GIS_Sep26_3(feature, layer) {
+        layer_ESRIBoundariesPlaces_1;
+        map.addLayer(layer_ESRIBoundariesPlaces_1);
+        function pop_MN_Turnkey_GIS_webMap_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>Project Name</strong><br />' + (feature.properties['Project Name'] !== null ? autolinker.link(String(feature.properties['Project Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -230,11 +218,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_MN_Turnkey_GIS_Sep26_3_0(feature) {
+        function style_MN_Turnkey_GIS_webMap_2_0(feature) {
             switch(String(feature.properties['Practice'])) {
                 case 'DWM':
                     return {
-                pane: 'pane_MN_Turnkey_GIS_Sep26_3',
+                pane: 'pane_MN_Turnkey_GIS_webMap_2',
                 shape: 'diamond',
                 radius: 6.0,
                 opacity: 1,
@@ -251,7 +239,7 @@
                     break;
                 case 'SB':
                     return {
-                pane: 'pane_MN_Turnkey_GIS_Sep26_3',
+                pane: 'pane_MN_Turnkey_GIS_webMap_2',
                 shape: 'diamond',
                 radius: 6.0,
                 opacity: 1,
@@ -268,26 +256,26 @@
                     break;
             }
         }
-        map.createPane('pane_MN_Turnkey_GIS_Sep26_3');
-        map.getPane('pane_MN_Turnkey_GIS_Sep26_3').style.zIndex = 403;
-        map.getPane('pane_MN_Turnkey_GIS_Sep26_3').style['mix-blend-mode'] = 'normal';
-        var layer_MN_Turnkey_GIS_Sep26_3 = new L.geoJson(json_MN_Turnkey_GIS_Sep26_3, {
+        map.createPane('pane_MN_Turnkey_GIS_webMap_2');
+        map.getPane('pane_MN_Turnkey_GIS_webMap_2').style.zIndex = 402;
+        map.getPane('pane_MN_Turnkey_GIS_webMap_2').style['mix-blend-mode'] = 'normal';
+        var layer_MN_Turnkey_GIS_webMap_2 = new L.geoJson(json_MN_Turnkey_GIS_webMap_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_MN_Turnkey_GIS_Sep26_3',
-            layerName: 'layer_MN_Turnkey_GIS_Sep26_3',
-            pane: 'pane_MN_Turnkey_GIS_Sep26_3',
-            onEachFeature: pop_MN_Turnkey_GIS_Sep26_3,
+            dataVar: 'json_MN_Turnkey_GIS_webMap_2',
+            layerName: 'layer_MN_Turnkey_GIS_webMap_2',
+            pane: 'pane_MN_Turnkey_GIS_webMap_2',
+            onEachFeature: pop_MN_Turnkey_GIS_webMap_2,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_MN_Turnkey_GIS_Sep26_3_0(feature));
+                return L.shapeMarker(latlng, style_MN_Turnkey_GIS_webMap_2_0(feature));
             },
         });
-        bounds_group.addLayer(layer_MN_Turnkey_GIS_Sep26_3);
-        map.addLayer(layer_MN_Turnkey_GIS_Sep26_3);
+        bounds_group.addLayer(layer_MN_Turnkey_GIS_webMap_2);
+        map.addLayer(layer_MN_Turnkey_GIS_webMap_2);
         const url = {"Nominatim OSM": "https://nominatim.openstreetmap.org/search?format=geojson&addressdetails=1&",
         "France BAN": "https://api-adresse.data.gouv.fr/search/?"}
         var photonControl = L.control.photon({
@@ -342,9 +330,8 @@
             }
         });
         var overlaysTree = [
-            {label: 'MN_Turnkey_GIS_Sep26<br /><table><tr><td style="text-align: center;"><img src="legend/MN_Turnkey_GIS_Sep26_3_DWM0.png" /></td><td>DWM</td></tr><tr><td style="text-align: center;"><img src="legend/MN_Turnkey_GIS_Sep26_3_SB1.png" /></td><td>SB</td></tr></table>', layer: layer_MN_Turnkey_GIS_Sep26_3},
-            {label: "ESRI Boundaries&Places", layer: layer_ESRIBoundariesPlaces_2},
-            {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid_1, radioGroup: 'bm' },
+            {label: 'MN_Turnkey_GIS_webMap<br /><table><tr><td style="text-align: center;"><img src="legend/MN_Turnkey_GIS_webMap_2_DWM0.png" /></td><td>DWM</td></tr><tr><td style="text-align: center;"><img src="legend/MN_Turnkey_GIS_webMap_2_SB1.png" /></td><td>SB</td></tr></table>', layer: layer_MN_Turnkey_GIS_webMap_2},
+            {label: "ESRI Boundaries&Places", layer: layer_ESRIBoundariesPlaces_1},
             {label: "ESRI Standard", layer: layer_ESRIStandard_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
@@ -426,7 +413,7 @@
         document.getElementById("all").appendChild(col1);
         document.getElementById("all").appendChild(col2);
         col1.appendChild(mapDiv)
-        var Filters = {"Structure Type": "str","County": "str","Status": "str"};
+        var Filters = {"County": "str","Structure Type": "str","Status": "str"};
         function filterFunc() {
           map.eachLayer(function(lyr){
           if ("options" in lyr && "dataVar" in lyr["options"]){
@@ -518,6 +505,43 @@
         }
             document.getElementById("menu").appendChild(
                 document.createElement("div"));
+            var div_County = document.createElement('div');
+            div_County.id = "div_County";
+            div_County.className= "filterselect";
+            document.getElementById("menu").appendChild(div_County);
+            sel_County = document.createElement('select');
+            sel_County.multiple = true;
+            sel_County.size = 8;
+            sel_County.id = "sel_County";
+            var County_options_str = "<option value='' unselected></option>";
+            sel_County.onchange = function(){filterFunc()};
+            County_options_str  += '<option value="Chippewa">Chippewa</option>';
+            County_options_str  += '<option value="Cottonwood">Cottonwood</option>';
+            County_options_str  += '<option value="Lac Qui Parle">Lac Qui Parle</option>';
+            County_options_str  += '<option value="Lyon">Lyon</option>';
+            County_options_str  += '<option value="Murray">Murray</option>';
+            County_options_str  += '<option value="Pipestone">Pipestone</option>';
+            County_options_str  += '<option value="Renville">Renville</option>';
+            County_options_str  += '<option value="Yellow Medicine">Yellow Medicine</option>';
+            sel_County.innerHTML = County_options_str;
+            div_County.appendChild(sel_County);
+            var lab_County = document.createElement('div');
+            lab_County.innerHTML = 'County';
+            lab_County.className = 'filterlabel';
+            div_County.appendChild(lab_County);
+            var reset_County = document.createElement('div');
+            reset_County.innerHTML = 'clear filter';
+            reset_County.className = 'filterlabel';
+            reset_County.onclick = function() {
+                var options = document.getElementById("sel_County").options;
+                for (var i=0; i < options.length; i++) {
+                    options[i].selected = false;
+                }
+                filterFunc();
+            };
+            div_County.appendChild(reset_County);
+            document.getElementById("menu").appendChild(
+                document.createElement("div"));
             var div_StructureType = document.createElement('div');
             div_StructureType.id = "div_StructureType";
             div_StructureType.className= "filterselect";
@@ -549,51 +573,18 @@
             div_StructureType.appendChild(reset_StructureType);
             document.getElementById("menu").appendChild(
                 document.createElement("div"));
-            var div_County = document.createElement('div');
-            div_County.id = "div_County";
-            div_County.className= "filterselect";
-            document.getElementById("menu").appendChild(div_County);
-            sel_County = document.createElement('select');
-            sel_County.multiple = true;
-            sel_County.size = 5;
-            sel_County.id = "sel_County";
-            var County_options_str = "<option value='' unselected></option>";
-            sel_County.onchange = function(){filterFunc()};
-            County_options_str  += '<option value="Chippewa">Chippewa</option>';
-            County_options_str  += '<option value="Lac Qui Parle">Lac Qui Parle</option>';
-            County_options_str  += '<option value="Lyon">Lyon</option>';
-            County_options_str  += '<option value="Renville">Renville</option>';
-            County_options_str  += '<option value="Yellow Medicine">Yellow Medicine</option>';
-            sel_County.innerHTML = County_options_str;
-            div_County.appendChild(sel_County);
-            var lab_County = document.createElement('div');
-            lab_County.innerHTML = 'County';
-            lab_County.className = 'filterlabel';
-            div_County.appendChild(lab_County);
-            var reset_County = document.createElement('div');
-            reset_County.innerHTML = 'clear filter';
-            reset_County.className = 'filterlabel';
-            reset_County.onclick = function() {
-                var options = document.getElementById("sel_County").options;
-                for (var i=0; i < options.length; i++) {
-                    options[i].selected = false;
-                }
-                filterFunc();
-            };
-            div_County.appendChild(reset_County);
-            document.getElementById("menu").appendChild(
-                document.createElement("div"));
             var div_Status = document.createElement('div');
             div_Status.id = "div_Status";
             div_Status.className= "filterselect";
             document.getElementById("menu").appendChild(div_Status);
             sel_Status = document.createElement('select');
             sel_Status.multiple = true;
-            sel_Status.size = 4;
+            sel_Status.size = 5;
             sel_Status.id = "sel_Status";
             var Status_options_str = "<option value='' unselected></option>";
             sel_Status.onchange = function(){filterFunc()};
             Status_options_str  += '<option value="Construction Ready">Construction Ready</option>';
+            Status_options_str  += '<option value="Design Active">Design Active</option>';
             Status_options_str  += '<option value="Design Only">Design Only</option>';
             Status_options_str  += '<option value="Installed">Installed</option>';
             Status_options_str  += '<option value="NRCS Review">NRCS Review</option>';
